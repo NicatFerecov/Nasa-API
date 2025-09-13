@@ -17,7 +17,7 @@ class Nasa:
     _translated_text = [] # bos list
     _IMAGE_URL = [] # bos list
     def __init__(self, date):  
-        self.api_key = "IZEbkct7cfPaRY2HXDn6GhhFsd70yCIeR8nAJUpn" # Your API key
+        self.api_key = "KEY" # Your API key
         self.date = date
         self.url = f"https://api.nasa.gov/planetary/apod?api_key={self.api_key}&date={self.date}"
     def response_url(self):
@@ -67,7 +67,7 @@ class Nasa:
         params = {
           "engine": "google",
           "q": self.nasaTitle[0],
-          "api_key": "6FQ94D6stc8dCSsf86jCkqrZ" # Your API key
+          "api_key": "KEY" # Your API key
         }
 
         response = requests.get(url, params=params)
@@ -87,4 +87,5 @@ nasa = Nasa(date="2022-09-13")
 print(nasa.translate(text=nasa.response_url()))
 nasa.download_image(url=nasa._IMAGE_URL[0], save_as=PATH_NAME)
 nasa.save_to_file(format="json")
+
 # nasa.search_engine()
